@@ -1,5 +1,6 @@
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
+    DEVICE_PROVISIONED=1 \
     persist.data.qmi.adb_logmask=0 \
     persist.data.target=dpm1 \
     persist.radio.apm_sim_not_pwdn=1 \
@@ -10,7 +11,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.ecc_hard_1=112,911,110,122,119,120,000,118 \
     persist.radio.ecc_hard_count=1 \
     rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so \
-    ril.subscription.types=RUIM
+    ro.config.always_show_roaming=true \
+    ro.telephony.default_network=9,9 \
+    ril.subscription.types=NV,RUIM \
+    telephony.lteOnCdmaDevice=1
 
 # RIL
 ifeq ($(QCPATH),)
